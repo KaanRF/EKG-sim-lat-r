@@ -1,0 +1,111 @@
+CCS PCM C Compiler, Version 4.068, 28235               06-May-13 19:36
+
+               Filename: C:\Users\Kaan\Desktop\PIC C\Calismalar\EKG simülatör\PWM\pwm.lst
+
+               ROM used: 58 words (1%)
+                         Largest free fragment is 2048
+               RAM used: 7 (2%) at main() level
+                         8 (2%) worst case
+               Stack:    1 locations
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   019
+0003:  NOP
+.................... #include <16f877.h> 
+.................... //////// Standard Header file for the PIC16F877 device //////////////// 
+.................... #device PIC16F877 
+.................... #list 
+....................  
+....................  
+.................... #fuses XT,NOWDT,NOPROTECT,NOBROWNOUT,NOPUT,NOWRT,NODEBUG,NOCPD,NOLVP 
+....................  
+.................... #use delay (clock=4000000) 
+0004:  MOVLW  22
+0005:  MOVWF  04
+0006:  BCF    03.7
+0007:  MOVF   00,W
+0008:  BTFSC  03.2
+0009:  GOTO   018
+000A:  MOVLW  01
+000B:  MOVWF  78
+000C:  CLRF   77
+000D:  DECFSZ 77,F
+000E:  GOTO   00D
+000F:  DECFSZ 78,F
+0010:  GOTO   00C
+0011:  MOVLW  4A
+0012:  MOVWF  77
+0013:  DECFSZ 77,F
+0014:  GOTO   013
+0015:  GOTO   016
+0016:  DECFSZ 00,F
+0017:  GOTO   00A
+0018:  RETLW  00
+....................  
+.................... #use fast_io(c) 
+.................... #use fast_io(b) 
+....................  
+....................  
+....................  
+....................  
+.................... void main() 
+.................... { 
+0019:  CLRF   04
+001A:  BCF    03.7
+001B:  MOVLW  1F
+001C:  ANDWF  03,F
+001D:  BSF    03.5
+001E:  BSF    1F.0
+001F:  BSF    1F.1
+0020:  BSF    1F.2
+0021:  BCF    1F.3
+.................... set_tris_b(0x00); 
+0022:  MOVLW  00
+0023:  MOVWF  06
+....................  
+....................  
+.................... output_b(0x00); 
+0024:  BCF    03.5
+0025:  CLRF   06
+....................  
+.................... while(1) 
+.................... { 
+.................... output_high(pin_b0); 
+0026:  BSF    06.0
+.................... output_low(pin_b1); 
+0027:  BCF    06.1
+.................... delay_ms(500); 
+0028:  MOVLW  02
+0029:  MOVWF  21
+002A:  MOVLW  FA
+002B:  MOVWF  22
+002C:  CALL   004
+002D:  DECFSZ 21,F
+002E:  GOTO   02A
+.................... output_low(pin_b0); 
+002F:  BCF    06.0
+.................... output_high(pin_b1); 
+0030:  BSF    06.1
+.................... delay_ms(500); 
+0031:  MOVLW  02
+0032:  MOVWF  21
+0033:  MOVLW  FA
+0034:  MOVWF  22
+0035:  CALL   004
+0036:  DECFSZ 21,F
+0037:  GOTO   033
+....................  
+....................  
+.................... } 
+0038:  GOTO   026
+.................... } 
+....................  
+....................  
+....................  
+....................  
+0039:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F39   XT NOWDT NOPUT NOPROTECT NOBROWNOUT NOLVP NOCPD NOWRT NODEBUG

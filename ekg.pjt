@@ -1,0 +1,51 @@
+[Directories]
+Include=C:\Program Files (x86)\PICC\devices\;C:\Program Files (x86)\PICC\drivers\;
+Library=
+LinkerScript=
+[defines]
+enabled=0
+D1=
+V1=
+[fileformats]
+forcecoff=0
+debug=4
+error=2
+object=0
+list=0
+scratch=0
+sta=1
+tre=1
+allerrors=1
+allwarnings=1
+stayupne=3
+stayupoe=0
+[PROJECT]
+Target=ekg.hex
+Development_Mode=
+Processor=0x877A
+Processor_Text=PIC16F877A
+ToolSuite=CCS
+[Target Data]
+BuildTool=C-COMPILER
+OptionString=+FM
+AdditionalOptionString=
+BuildRequired=1
+[ekg.c]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+[mru-list]
+1=C:\Users\Kaan\Desktop\PIC C\Calismalar\EKG simülatör\ekg.c
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+[Units]
+Link=0
+Count=1
+1=ekg.c
+[Opened Files]
+1=C:\Users\Kaan\Desktop\PIC C\Calismalar\EKG simülatör\ekg.c
+2=C:\Users\Kaan\Desktop\PIC C\Calismalar\EKG simülatör\ekg.hex
+3=
